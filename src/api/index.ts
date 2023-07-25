@@ -8,7 +8,7 @@ export function fetchChatAPI<T = any>(
   signal?: GenericAbortSignal,
 ) {
   return post<T>({
-    url: '/chat',
+    url: 'http://chatgpt-web-backend-one.vercel.app:3002/api/chat',
     data: { prompt, options },
     signal,
   })
@@ -16,7 +16,7 @@ export function fetchChatAPI<T = any>(
 
 export function fetchChatConfig<T = any>() {
   return post<T>({
-    url: '/config',
+    url: 'http://chatgpt-web-backend-one.vercel.app:3002/api/config',
   })
 }
 
@@ -45,7 +45,7 @@ export function fetchChatAPIProcess<T = any>(
   }
 
   return post<T>({
-    url: '/chat-process',
+    url: 'http://chatgpt-web-backend-one.vercel.app:3002/api/chat-process',
     data,
     signal: params.signal,
     onDownloadProgress: params.onDownloadProgress,
@@ -54,13 +54,13 @@ export function fetchChatAPIProcess<T = any>(
 
 export function fetchSession<T>() {
   return post<T>({
-    url: '/session',
+    url: 'http://chatgpt-web-backend-one.vercel.app:3002/api/session',
   })
 }
 
 export function fetchVerify<T>(token: string) {
   return post<T>({
-    url: '/verify',
+    url: 'http://chatgpt-web-backend-one.vercel.app:3002/api/verify',
     data: { token },
   })
 }
